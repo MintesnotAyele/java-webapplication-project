@@ -78,20 +78,48 @@ String dep;
     public void setRoom(String room) {
         this.room = room;
     }
-     
-    public void add() throws ClassNotFoundException{
        Dconnection con=new Dconnection();
+    public void add() throws ClassNotFoundException{
+     
         try{
             Connection conn=con.conMethod();
+            String sql2="select GENDER1 from BLOCK where BLOCKNUMBER=?";
+            PreparedStatement psmt1=conn.prepareStatement(sql2);
+              psmt1.setString(1, block);
+        ResultSet res1=psmt1.executeQuery();
+           res1.next();
+            String gen=res1.getString("GENDER1");
+            if(gender == null ? gen == null : gender.equals(gen)){
+              add1();  
+            }
+            else{
+            FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                            "sorry this is not "+gender+" block",
+                            ""));
+            }}
+         catch(SQLException ex)
+        {
+         FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                            "Incorrect block and Passowrd",
+                            ""));
+        }
+            
+    }
+    public void add1() throws ClassNotFoundException, SQLException{
+      try{  Connection conn1=con.conMethod();
             String sql1="select count(*) from info where ROOM=?";
-            PreparedStatement psmt=conn.prepareStatement(sql1);
+            PreparedStatement psmt=conn1.prepareStatement(sql1);
               psmt.setString(1, room);
         ResultSet res=psmt.executeQuery();
         res.next();
         int room1=res.getInt(1);
-      if(room1<2){
+      if(room1<=6){
             String sql="insert into info(ID,NAME,LASTNAME,DEPARTMENT,BLOCK,ROOM,GENDER) values(?,?,?,?,?,?,?)";
-           PreparedStatement ps=conn.prepareStatement(sql);
+           PreparedStatement ps=conn1.prepareStatement(sql);
            ps.setString(1, id);
             ps.setString(2, fname);
              ps.setString(3, lname);
@@ -108,15 +136,17 @@ String dep;
                     new FacesMessage(FacesMessage.SEVERITY_WARN,
                             "sorry the room is full",
                             ""));
-        }
-        }
-        catch(SQLException ex)
+        }}
+       catch(SQLException ex)
         {
          FacesContext.getCurrentInstance().addMessage(
                     null,
                     new FacesMessage(FacesMessage.SEVERITY_WARN,
-                            "Incorrect block and Passowrd",
+                            "sorry",
                             ""));
         }
-    } 
-}
+    }
+        }
+       
+    
+
