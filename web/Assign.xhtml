@@ -12,6 +12,27 @@
                 background-color: rgb;
                 
             }
+            .btn {
+  -webkit-border-radius: 25;
+  -moz-border-radius: 25;
+  border-radius: 25px;
+  text-shadow: 1px 2px 3px #666666;
+  -webkit-box-shadow: 1px 1px 3px #666666;
+  -moz-box-shadow: 1px 1px 3px #666666;
+  box-shadow: 1px 1px 3px #666666;
+  font-family: Courier New;
+  color: #ede6ed;
+  font-size: 17px;
+  background: #3f5361;
+  padding: 9px 20px 10px 20px;
+  border: dotted #394852 2px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3e7394;
+  text-decoration: none;
+}
         </style>
     </h:head>
     <h:body>
@@ -29,7 +50,7 @@
             <h2>Block:<h:inputText value="#{asign.block}"></h:inputText></h2>
             <h2>Room:<h:inputText value="#{asign.room}"></h:inputText></h2>
             <h2>DEPARTMENT:<h:inputText value="#{asign.dep}"></h:inputText></h2>
-            <h:commandButton value="add" action="#{asign.add()}"></h:commandButton>
+            <h:commandButton class="btn"value="add" action="#{asign.add()}"></h:commandButton>
               </h:form>
     </h:body>
 </html>
