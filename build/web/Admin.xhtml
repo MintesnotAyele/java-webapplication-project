@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>DORTORY ADMINSTRETOR</title>
+        <style> 
+        body{
+                background-color: peachpuff;
+                margin: 10px;
+              background-repeat: no-repeat;
+                   background-image: url("image/uni.jpg");
+            }
+            form{
+                position: fixed;
+                margin-left: 500px;
+                margin-top: 300px;
+                
+            }
+            .submitButton{
+                margin: 10px;
+                background-color:window;
+                padding: 10px 10px;
+                border-bottom-color: brown;
+                background: orange;
+            }
+            .deletButton{
+                margin: 10px;
+                background-color:window;
+                padding: 10px 10px;
+                border-bottom-color: brown;
+                background: orange;
+            }
+            .view{
+                margin: 10px;
+                background-color:window;
+                background: orange;
+                padding: 10px 10px;
+                border-bottom-color: brown;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+     <h:commandButton action="Assign" class="submitButton" value="ASSIGN"></h:commandButton>
+     <h:commandButton action="Delete" class="deletButton" value="remove"></h:commandButton>
+     <h:commandButton action="view" class="view"  value="view"></h:commandButton>
+     </h:form>
+    </h:body>
+</html>

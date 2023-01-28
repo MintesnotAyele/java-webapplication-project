@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+       <title>student information</title>
+        
+        
+        
+        
+        <style>
+             body{
+                background-color: orange;
+                background-size: 100%
+            }
+                  td{
+                margin: 20px;
+                
+                padding: 10px;
+                background-color: lightgray;
+            }
+             
+            th{
+                background-color:darkred ;
+                margin: 20px;
+                
+                padding: 10px;
+            } 
+            tr:nth-child(even) {background-color: #f2f2f2;}
+            .ADMINPAGE{
+                width: 100%;
+            }
+        </style>
+    </h:head>
+    <h:body>
+       <p>STUDENT INFORMATION</p><BR></BR>
+        <h:dataTable id="pData" value="#{viewstudent.studentlist}" var="data" >
+            
+            <h:column>
+                <f:facet name="header">
+                    ID
+                </f:facet>
+                <h:outputText value="#{data.id}"/>  
+
+            </h:column>
+             <h:column>
+                <f:facet name="header">
+                    FRIST NAME
+                </f:facet>
+                <h:outputText value="#{data.fName}"/>  
+            </h:column>
+             <h:column>
+                <f:facet name="header">
+                    LAST NAME
+                </f:facet>
+               <h:outputText value="#{data.lname}"/>  
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    GENDER
+                </f:facet>
+               <h:outputText value="#{data.gender}"/>  
+           </h:column>
+             <h:column>
+                <f:facet name="header">
+                   department
+                </f:facet>
+                <h:outputText value="#{data.department}"/>  
+            </h:column>
+             <h:column>
+                <f:facet name="header">
+                   Block
+                </f:facet>
+                 <h:outputText value="#{data.block}"/>  
+            </h:column>
+             <h:column>
+                <f:facet name="header">
+                    ROOM
+                </f:facet>
+               <h:outputText value="#{data.room}"/>  
+            </h:column>
+            
+        </h:dataTable>
+    </h:body>
+</html>

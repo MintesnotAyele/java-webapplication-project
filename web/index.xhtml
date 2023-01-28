@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>dormitory management</title>
+        <style>
+            .out{
+                 margin: 10px;
+              background-repeat: no-repeat;
+                background-image: url("photo/unity.jpg");
+               background-color: aqua;
+            }
+            form{
+                position: fixed;
+                margin-left: 400px;
+                margin-top: 100px;
+                
+            }
+        </style>
+        
+    </h:head>
+    
+    <h:body class="out">
+        <div class="in">
+            <h:form>
+                <h2>
+                   WELCOME TO WOLIKITE UNIVERSITY
+                </h2>
+                <h2>username:<h:inputText value="#{login.usern}"></h:inputText></h2>
+                <h2>Password:<h:inputText value="#{login.pass}"></h:inputText></h2>   
+               
+                <h:commandButton action="#{login.method1()}" class="myButton" value="login"></h:commandButton>
+                <h:commandButton value="CANCLE" action="user.xhtml"></h:commandButton>
+            </h:form>
+            
+       
+  
+        </div>
+    </h:body>
+</html>
