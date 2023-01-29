@@ -1,10 +1,13 @@
+
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.bean.RequestScoped;
 import jakarta.faces.context.FacesContext;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -15,8 +18,9 @@ import java.sql.SQLException;
  * @author YOU
  */
 @ManagedBean
-public class Asign {
-  String fname;
+@RequestScoped
+public class Update {
+    String fname;
   String lname;
   String gender;
    String id;
@@ -24,13 +28,6 @@ public class Asign {
      String room;
 String dep;
 
-    public String getDep() {
-        return dep;
-    }
-
-    public void setDep(String dep) {
-        this.dep = dep;
-    }
     public String getFname() {
         return fname;
     }
@@ -78,10 +75,17 @@ String dep;
     public void setRoom(String room) {
         this.room = room;
     }
-       Dconnection con=new Dconnection();
-    public void add() throws ClassNotFoundException{
-     
-        try{
+
+    public String getDep() {
+        return dep;
+    }
+
+    public void setDep(String dep) {
+        this.dep = dep;
+    }
+    Dconnection con=new Dconnection();
+    public void update1() throws ClassNotFoundException{
+         try{
             Connection conn=con.conMethod();
             String sql2="select GENDER1 from BLOCK where BLOCKNUMBER=?";
             PreparedStatement psmt1=conn.prepareStatement(sql2);
@@ -107,9 +111,9 @@ String dep;
                             "Incorrect block and Passowrd",
                             ""));
         }
-            
+        
     }
-    public void add1() throws ClassNotFoundException, SQLException{
+      public void add1() throws ClassNotFoundException, SQLException{
       try{  Connection conn1=con.conMethod();
             String sql1="select count(*) from info where ROOM=? and BLOCK=?";
             PreparedStatement psmt=conn1.prepareStatement(sql1);
@@ -119,15 +123,15 @@ String dep;
         res.next();
         int room1=res.getInt(1);
       if(room1<=6){
-            String sql="insert into info(ID,NAME,LASTNAME,DEPARTMENT,BLOCK,ROOM,GENDER) values(?,?,?,?,?,?,?)";
+            String sql="update info set NAME=?,LASTNAME=?,DEPARTMENT=?,BLOCK=?,ROOM=?,GENDER=? where id=?";
            PreparedStatement ps=conn1.prepareStatement(sql);
-           ps.setString(1, id);
-            ps.setString(2, fname);
-             ps.setString(3, lname);
-               ps.setString(4, dep);
-                 ps.setString(5, block);
-                   ps.setString(6, room);
-                     ps.setString(7, gender);
+           ps.setString(7, id);
+            ps.setString(1, fname);
+             ps.setString(2, lname);
+               ps.setString(3, dep);
+                 ps.setString(4, block);
+                   ps.setString(5, room);
+                     ps.setString(6, gender);
            ps.executeUpdate();
       }
        else
@@ -147,7 +151,4 @@ String dep;
                             ""));
         }
     }
-        }
-       
-    
-
+}

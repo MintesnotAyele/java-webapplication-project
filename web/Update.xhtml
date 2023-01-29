@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            body{
+              background-image: url("photo/photjjj.jpg");  
+            }
+            .body{
+                background-color: cornsilk;
+                position: fixed;
+                margin-left: 300px;
+            }
+              .btn {
+  -webkit-border-radius: 25;
+  -moz-border-radius: 25;
+  border-radius: 25px;
+  text-shadow: 1px 2px 3px #666666;
+  -webkit-box-shadow: 1px 1px 3px #666666;
+  -moz-box-shadow: 1px 1px 3px #666666;
+  box-shadow: 1px 1px 3px #666666;
+  font-family: Courier New;
+  color: #ede6ed;
+  font-size: 17px;
+  background: #3f5361;
+  padding: 9px 20px 10px 20px;
+  border: dotted #394852 2px;
+  text-decoration: none;
+   margin: 10px;
+}
+
+.btn:hover {
+  background: #3e7394;
+  text-decoration: none;
+}
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="body">
+                 <h2>
+              WELCOME TO WOLIKITE UNIVERSITY
+               </h2>  
+            <h2>First Name:<h:inputText value="#{update.fname}"></h:inputText> </h2>
+            <h2>Last Name:<h:inputText value="#{update.lname}"></h:inputText></h2>
+            <h2>Gender:<h:selectOneRadio value="#{update.gender}">
+                    <f:selectItem itemValue="male" itemLabel="Male"></f:selectItem>
+                    <f:selectItem itemValue="female" itemLabel="Female"></f:selectItem>             
+                </h:selectOneRadio></h2>
+            <h2>ID:<h:inputText value="#{update.id}"></h:inputText></h2>
+            <h2>Block:<h:inputText value="#{update.block}"></h:inputText></h2>
+            <h2>Room:<h:inputText value="#{update.room}"></h:inputText></h2>
+            <h2>DEPARTMENT:<h:inputText value="#{update.dep}"></h:inputText></h2>
+            <h:commandButton class="btn" value="add" action="#{update.update1()}"></h:commandButton>
+            <h:commandButton class="btn" value="cancle" action="Admin"></h:commandButton>
+            </div>
+              </h:form>
+    </h:body>
+</html>
