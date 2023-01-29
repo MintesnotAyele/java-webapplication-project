@@ -23,6 +23,17 @@ public class Asign {
     String block;
      String room;
 String dep;
+String std;
+
+    public String getStd() {
+        return std;
+    }
+
+    public void setStd(String std) {
+        this.std = std;
+    }
+
+
 
     public String getDep() {
         return dep;
@@ -119,7 +130,7 @@ String dep;
         res.next();
         int room1=res.getInt(1);
       if(room1<=6){
-            String sql="insert into info(ID,NAME,LASTNAME,DEPARTMENT,BLOCK,ROOM,GENDER) values(?,?,?,?,?,?,?)";
+            String sql="insert into info1(ID,NAME,LASTNAME,DEPARTMENT,BLOCK,ROOM,GENDER,STUDID) values(?,?,?,?,?,?,?,?)";
            PreparedStatement ps=conn1.prepareStatement(sql);
            ps.setString(1, id);
             ps.setString(2, fname);
@@ -128,6 +139,7 @@ String dep;
                  ps.setString(5, block);
                    ps.setString(6, room);
                      ps.setString(7, gender);
+                     ps.setString(8, std);
            ps.executeUpdate();
       }
        else

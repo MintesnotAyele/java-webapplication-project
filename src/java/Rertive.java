@@ -49,7 +49,7 @@ public class Rertive {
     try{
     Dconnection gettin=new Dconnection();
         Connection con=gettin.conMethod();
-       PreparedStatement ps=con.prepareStatement("select * from info where id=?");
+       PreparedStatement ps=con.prepareStatement("select * from info1 where id=?");
         ps.setString(1, id1);
         ResultSet results=ps.executeQuery();
         while(results.next()){
@@ -78,7 +78,7 @@ public class Rertive {
     try{
     Dconnection gettin=new Dconnection();
         Connection con=gettin.conMethod();
-       PreparedStatement ps=con.prepareStatement("select * from info ");
+       PreparedStatement ps=con.prepareStatement("select * from info1 ");
      
         ResultSet results=ps.executeQuery();
         while(results.next()){

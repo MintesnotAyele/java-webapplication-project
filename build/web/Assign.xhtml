@@ -6,8 +6,17 @@
     <h:head>
         <title>Facelet Title</title>
         <style>
+            .dorm{
+                background-image: url("photo/dorm22.jpg");
+                background-color: highlight;
+                margin-left: 300px;
+              margin-right: 400px;
+                background-size: 100%;
+            }
             body{
-                background-image: url("photo/photjjj.jpg")
+                background-image: url("photo/dorm777.jpg");
+                background-size: 100%;
+               
                 margin: 10px;
               background-repeat: no-repeat;
             }
@@ -60,26 +69,33 @@
   background: #3e7394;
   text-decoration: none;
 }
-        
+.txt{
+    position: fixed;
+    left: 500px;
+    
+}      
         </style>
     </h:head>
     <h:body>
         <h:form>
+            <div class="dorm">
      <h2>
               WELCOME TO WOLIKITE UNIVERSITY
                </h2>
-            <h2>First Name:<h:inputText value="#{asign.fname}"></h:inputText> </h2>
-            <h2>Last Name:<h:inputText value="#{asign.lname}"></h:inputText></h2>
-            <h2>Gender:<h:selectOneRadio value="#{asign.gender}">
-                    <f:selectItem itemValue="male" itemLabel="male"></f:selectItem>
-                    <f:selectItem itemValue="female" itemLabel="female"></f:selectItem>             
+                <h2>First Name:<h:inputText value="#{asign.fname}" class="txt"></h:inputText> </h2>
+                <h2>Last Name:<h:inputText value="#{asign.lname}" class="txt"></h:inputText></h2>
+                <h2>Gender:<h:selectOneRadio value="#{asign.gender}">
+                    <f:selectItem itemValue="male" itemLabel="Male"></f:selectItem>
+                    <f:selectItem itemValue="female" itemLabel="Female"></f:selectItem>             
                 </h:selectOneRadio></h2>
-            <h2>ID:<h:inputText value="#{asign.id}"></h:inputText></h2>
-            <h2>Block:<h:inputText value="#{asign.block}"></h:inputText></h2>
-            <h2>Room:<h:inputText value="#{asign.room}"></h:inputText></h2>
-            <h2>DEPARTMENT:<h:inputText value="#{asign.dep}"></h:inputText></h2>
+                <h2>ID:<h:inputText value="#{asign.id}" class="txt"></h:inputText></h2>
+                <h2>Block:<h:inputText value="#{asign.block}" class="txt"></h:inputText></h2>
+                <h2>Room:<h:inputText value="#{asign.room}" class="txt"></h:inputText></h2>
+                <h2>DEPARTMENT:<h:inputText value="#{asign.dep}" class="txt"></h:inputText></h2>
+                <h2>STUDID:<h:inputText value="#{asign.std}" class="txt"></h:inputText></h2>
             <h:commandButton class="btn" value="add" action="#{asign.add()}"></h:commandButton>
             <h:commandButton class="btn1" value="cancle" action="Admin"></h:commandButton>
+            </div>
               </h:form>
     </h:body>
 </html>

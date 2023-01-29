@@ -27,6 +27,19 @@ public class Update {
     String block;
      String room;
 String dep;
+String std;
+
+    public String getStd() {
+        return std;
+    }
+
+    public void setStd(String std) {
+        this.std = std;
+    }
+
+
+
+
 
     public String getFname() {
         return fname;
@@ -123,7 +136,7 @@ String dep;
         res.next();
         int room1=res.getInt(1);
       if(room1<=6){
-            String sql="update info set NAME=?,LASTNAME=?,DEPARTMENT=?,BLOCK=?,ROOM=?,GENDER=? where id=?";
+            String sql="update info1 set NAME=?,LASTNAME=?,DEPARTMENT=?,BLOCK=?,ROOM=?,GENDER=?,id=? where STUDID=?";
            PreparedStatement ps=conn1.prepareStatement(sql);
            ps.setString(7, id);
             ps.setString(1, fname);
@@ -132,6 +145,7 @@ String dep;
                  ps.setString(4, block);
                    ps.setString(5, room);
                      ps.setString(6, gender);
+                     ps.setString(8, std);
            ps.executeUpdate();
       }
        else

@@ -14,10 +14,8 @@ import java.sql.SQLException;
 @ManagedBean
 public class Remove {
  String fname; 
- String id;   
- String block;   
- String room;   
-
+ String std;   
+    
     public String getFname() {
         return fname;
     }
@@ -26,35 +24,20 @@ public class Remove {
         this.fname = fname;
     }
 
-    public String getId() {
-        return id;
+    public String getStd() {
+        return std;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setStd(String std) {
+        this.std = std;
     }
-
-    public String getBlock() {
-        return block;
-    }
-
-    public void setBlock(String block) {
-        this.block = block;
-    }
-
-    public String getRoom() {
-        return room;
-    }
-
-    public void setRoom(String room) {
-        this.room = room;
-    }
+    
  public void delete(){
       try {
               Dconnection obj = new Dconnection();
               Connection conn = obj.conMethod();
-            PreparedStatement stmt=conn.prepareStatement("delete from info where id=?");
-            stmt.setString(1, id);
+            PreparedStatement stmt=conn.prepareStatement("delete from info1 where STUDID=?");
+            stmt.setString(1, std);
             stmt.executeUpdate();  
         } catch(ClassNotFoundException | SQLException sqlException){
         }
