@@ -8,7 +8,8 @@
             .out{
                  margin: 10px;
               background-repeat: no-repeat;
-                background-image: url("photo/unity.jpg");
+                background-image: url("photo/photggg.jpg");
+                 background-size: 100%;
                background-color: aqua;
             }
             form{
@@ -17,6 +18,28 @@
                 margin-top: 100px;
                 
             }
+             .btn {
+  -webkit-border-radius: 25;
+  -moz-border-radius: 25;
+  border-radius: 25px;
+  text-shadow: 1px 2px 3px #666666;
+  -webkit-box-shadow: 1px 1px 3px #666666;
+  -moz-box-shadow: 1px 1px 3px #666666;
+  box-shadow: 1px 1px 3px #666666;
+  font-family: Courier New;
+  color: #ede6ed;
+  font-size: 17px;
+  background: #3f5361;
+  padding: 9px 20px 10px 20px;
+  border: dotted #394852 2px;
+  text-decoration: none;
+   margin: 10px;
+}
+
+.btn:hover {
+  background: #3e7394;
+  text-decoration: orangered;
+}
         </style>
         
     </h:head>
@@ -30,8 +53,8 @@
                 <h2>username:<h:inputText value="#{login.usern}"></h:inputText></h2>
                 <h2>Password:<h:inputText value="#{login.pass}"></h:inputText></h2>   
                
-                <h:commandButton action="#{login.method1()}" class="myButton" value="login"></h:commandButton>
-                <h:commandButton value="CANCLE" action="user.xhtml"></h:commandButton>
+                <h:commandButton action="#{login.method1()}" class="btn" value="login"></h:commandButton>
+                <h:commandButton value="CANCLE" action="index" class="btn"></h:commandButton>
             </h:form>
             
        

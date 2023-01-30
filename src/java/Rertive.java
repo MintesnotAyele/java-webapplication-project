@@ -1,4 +1,6 @@
+import jakarta.faces.application.FacesMessage;
 import jakarta.faces.bean.ManagedBean;
+import jakarta.faces.context.FacesContext;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -52,6 +54,7 @@ public class Rertive {
        PreparedStatement ps=con.prepareStatement("select * from info1 where id=?");
         ps.setString(1, id1);
         ResultSet results=ps.executeQuery();
+        if(results.next()){
         while(results.next()){
         String username=results.getString("ID");
         String passw=results.getString("NAME");
@@ -63,7 +66,14 @@ public class Rertive {
       
         arrayList.add(new use(username,passw,email,creditCardno,address,gender,phoneno));
         }
-        
+        }
+        else{
+             FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                            "sorry there is ",
+                            ""));
+        }
     }
     catch(Exception e){}
         return arrayList;

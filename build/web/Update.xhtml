@@ -4,13 +4,14 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>WOLKITE UNIVERSIT</title>
         <style>
             body{
               background-image: url("photo/photjjj.jpg");  
+              background-size: 100%
             }
             .body{
-                background-color: cornsilk;
+               background-color: cornsilk;
                 position: fixed;
                 margin-left: 300px;
             }
@@ -36,6 +37,11 @@
   background: #3e7394;
   text-decoration: none;
 }
+.txt{
+    position: fixed;
+    left: 500px;
+    
+}   
         </style>
     </h:head>
     <h:body>
@@ -44,17 +50,17 @@
                  <h2>
               WELCOME TO WOLIKITE UNIVERSITY
                </h2>  
-            <h2>First Name:<h:inputText value="#{update.fname}"></h:inputText> </h2>
-            <h2>Last Name:<h:inputText value="#{update.lname}"></h:inputText></h2>
+                <h2>First Name:<h:inputText value="#{update.fname}" class="txt"></h:inputText> </h2>
+                <h2>Last Name:<h:inputText value="#{update.lname}" class="txt"></h:inputText></h2>
             <h2>Gender:<h:selectOneRadio value="#{update.gender}">
                     <f:selectItem itemValue="male" itemLabel="Male"></f:selectItem>
                     <f:selectItem itemValue="female" itemLabel="Female"></f:selectItem>             
                 </h:selectOneRadio></h2>
-            <h2>ID:<h:inputText value="#{update.id}"></h:inputText></h2>
-            <h2>Block:<h:inputText value="#{update.block}"></h:inputText></h2>
-            <h2>Room:<h:inputText value="#{update.room}"></h:inputText></h2>
-            <h2>DEPARTMENT:<h:inputText value="#{update.dep}"></h:inputText></h2>
-             <h2>STUDID:<h:inputText value="#{update.std}"></h:inputText></h2>
+                <h2>ID:<h:inputText value="#{update.id}" class="txt"></h:inputText></h2>
+                <h2>Block:<h:inputText value="#{update.block}" class="txt"></h:inputText></h2>
+                <h2>Room:<h:inputText value="#{update.room}" class="txt"></h:inputText></h2>
+            <h2>DEPARTMENT:<h:inputText value="#{update.dep}" class="txt"></h:inputText></h2>
+             <h2>STUDID:<h:inputText value="#{update.std}" class="txt"></h:inputText></h2>
             <h:commandButton class="btn" value="add" action="#{update.update1()}"></h:commandButton>
             <h:commandButton class="btn" value="cancle" action="Admin"></h:commandButton>
             </div>

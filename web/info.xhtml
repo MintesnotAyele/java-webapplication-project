@@ -11,6 +11,7 @@
         
         <style>
              body{
+                 background-image: url("photo/dorm666.jpg");
                 background-color: orange;
                 background-size: 100%
             }
@@ -35,50 +36,50 @@
     </h:head>
     <h:body>
        <p>STUDENT INFORMATION</p><BR></BR>
-        <h:dataTable id="pData" value="#{viewstudent.studentlist}" var="data" >
+        <h:dataTable id="pData" value="#{viewstudent.studentlist}" var="info" >
             
             <h:column>
                 <f:facet name="header">
                     ID
                 </f:facet>
-                <h:outputText value="#{data.id}"/>  
+                <h:outputText value="#{info.id}"/>  
 
             </h:column>
              <h:column>
                 <f:facet name="header">
                     FRIST NAME
                 </f:facet>
-                <h:outputText value="#{data.fName}"/>  
+                <h:outputText value="#{info.fName}"/>  
             </h:column>
              <h:column>
                 <f:facet name="header">
                     LAST NAME
                 </f:facet>
-               <h:outputText value="#{data.lname}"/>  
+               <h:outputText value="#{info.lname}"/>  
             </h:column>
             <h:column>
                 <f:facet name="header">
                     GENDER
                 </f:facet>
-               <h:outputText value="#{data.gender}"/>  
+               <h:outputText value="#{info.gender}"/>  
            </h:column>
              <h:column>
                 <f:facet name="header">
                    department
                 </f:facet>
-                <h:outputText value="#{data.department}"/>  
+                <h:outputText value="#{info.department}"/>  
             </h:column>
              <h:column>
                 <f:facet name="header">
                    Block
                 </f:facet>
-                 <h:outputText value="#{data.block}"/>  
+                 <h:outputText value="#{info.block}"/>  
             </h:column>
              <h:column>
                 <f:facet name="header">
                     ROOM
                 </f:facet>
-               <h:outputText value="#{data.room}"/>  
+               <h:outputText value="#{info.room}"/>  
             </h:column>
             
         </h:dataTable>

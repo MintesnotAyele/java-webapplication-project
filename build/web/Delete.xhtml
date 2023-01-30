@@ -3,9 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>WOLKITE UNIVERSITY</title>
         <style>
-             body{
+             body{ background-image: url("photo/dorm555.jpg");
+                   background-size: 100%;
                 position: fixed;
                 margin-left: 300px;
                 background-color: orchid;
@@ -54,22 +55,32 @@
   background: #3e7394;
   text-decoration: none;
 }
-.txt{
-   position: fixed;
-   left: 500px;
+.poo{
+    background-color:beige;
+   margin-left: 100px;
+    margin-bottom: 100px;
+    margin-top: 200px;
 }
-
+.hh{color: aqua;
+    border-left-style: groove;
+    position: center;
+    text-indent: 10px;
+    size: B4;
+}
    </style>
     </h:head>
     <h:body>
         <h:form>
-            <h2>
+            <h1 class="hh">
               WELCOME TO WOLIKITE UNIVERSITY
-               </h2>
+               </h1>
+            <div class="poo">
+                <h2>PLEASE FILL THIS FORM</h2>
             <h2>First Name:<h:inputText class="txt" value="#{remove.fname}"></h:inputText> </h2>
-            <h2>STUDID:<h:inputText class="txt" value="#{remove.std}"></h:inputText></h2>
+            <h2>....STUDID:<h:inputText class="txt" value="#{remove.std}"></h:inputText></h2>
            <h:commandButton class="btn" value="remove" action="#{remove.delete()}"></h:commandButton>
              <h:commandButton class="btn1" value="cancle" action="Admin"></h:commandButton>
+             </div>
         </h:form>
     </h:body>
 </html>
