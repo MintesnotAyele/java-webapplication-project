@@ -128,7 +128,7 @@ String std;
     }
       public void add1() throws ClassNotFoundException, SQLException{
       try{  Connection conn1=con.conMethod();
-            String sql1="select count(*) from info where ROOM=? and BLOCK=?";
+            String sql1="select count(*) from info1 where ROOM=? and BLOCK=?";
             PreparedStatement psmt=conn1.prepareStatement(sql1);
               psmt.setInt(1, room);
               psmt.setInt(2, block);

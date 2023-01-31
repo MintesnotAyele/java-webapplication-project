@@ -73,7 +73,10 @@
     position: fixed;
     left: 500px;
     
-}      
+}  
+.error{
+    color: red;
+}
         </style>
     </h:head>
     <h:body>
@@ -88,7 +91,10 @@
                     <f:selectItem itemValue="male" itemLabel="Male"></f:selectItem>
                     <f:selectItem itemValue="female" itemLabel="Female"></f:selectItem>             
                 </h:selectOneRadio></h2>
-                <h2>ID:<h:inputText value="#{asign.id}" class="txt"></h:inputText></h2>
+                <h2>ID:<h:inputText id="idd" value="#{asign.id}" class="txt" required="true"
+                  requiredMessage="must contain atmost 5 characters" maxlength='5'>
+     <f:validateLength minimum='2' ></f:validateLength></h:inputText></h2>
+                 <h:message for="idd" styleClass="error"/>
                 <h2>Block:<h:inputText value="#{asign.block}" class="txt"></h:inputText></h2>
                 <h2>Room:<h:inputText value="#{asign.room}" class="txt"></h:inputText></h2>
                 <h2>DEPARTMENT:<h:inputText value="#{asign.dep}" class="txt"></h:inputText></h2>

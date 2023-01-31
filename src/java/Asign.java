@@ -106,7 +106,7 @@ String std;
             else{
             FacesContext.getCurrentInstance().addMessage(
                     null,
-                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR,
                             "sorry this is not "+gender+" block",
                             ""));
             }}
@@ -114,7 +114,7 @@ String std;
         {
          FacesContext.getCurrentInstance().addMessage(
                     null,
-                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR,
                             "Incorrect block and Passowrd",
                             ""));
         }
@@ -133,7 +133,7 @@ String std;
         else{
           FacesContext.getCurrentInstance().addMessage(
                     null,
-                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR,
                             "sorry this student is already asgind",
                             ""));   
         }

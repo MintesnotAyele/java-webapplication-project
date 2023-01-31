@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>dormitory management</title>
         <style>
@@ -52,6 +53,9 @@
     width: 400px;
     height: 150px
 }
+.error{
+    color: red;
+}
         </style>
         
     </h:head>
@@ -61,16 +65,14 @@
                    WELCOME TO WOLIKITE UNIVERSITY
                 </h2>
         <div class="ddd">
-       
-            
         </div>
         <div class="in">
-            <h:form>
-                
-                
+            <h:form> 
                 <h2>username:<h:inputText value="#{login.usern}"></h:inputText></h2>
-                <h2>Password:<h:inputSecret value="#{login.pass}"></h:inputSecret></h2>   
-               
+                <h2>Password:<h:inputSecret id="pass" value="#{login.pass}" required="true"
+                  requiredMessage="must contain atleast 4 characters" maxlength="10">
+     <f:validateLength minimum="4" ></f:validateLength></h:inputSecret></h2>   
+                <h:message for="pass" styleClass="error"/>
                 <h:commandButton action="#{login.method1()}" class="btn" value="login"></h:commandButton>
                 <h:commandButton value="CANCLE" action="index" class="btn"></h:commandButton>
             </h:form>
