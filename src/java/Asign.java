@@ -101,7 +101,7 @@ String std;
            res1.next();
             String gen=res1.getString("GENDER1");
             if(gender == null ? gen == null : gender.equals(gen)){
-              add1();  
+              add2();  
             }
             else{
             FacesContext.getCurrentInstance().addMessage(
@@ -120,9 +120,39 @@ String std;
         }
             
     }
+    
+    public void add2() throws SQLException{
+        try{  Connection conn4=con.conMethod();
+            String sql1="select count(*) from info1 where id=?";
+            PreparedStatement psmt4=conn4.prepareStatement(sql1);
+              psmt4.setString(1, id);
+        ResultSet res4=psmt4.executeQuery();
+        if(res4.next()){
+            add1();
+        }
+        else{
+          FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                            "sorry this student is already asgind",
+                            ""));   
+        }
+          
+        }
+        catch(Exception ex){
+            
+        }
+    }
+    
+    
+    
+        
+    
+    
+    
     public void add1() throws ClassNotFoundException, SQLException{
       try{  Connection conn1=con.conMethod();
-            String sql1="select count(*) from info where ROOM=? and BLOCK=?";
+            String sql1="select count(*) from info1 where ROOM=? and BLOCK=?";
             PreparedStatement psmt=conn1.prepareStatement(sql1);
               psmt.setString(1, room);
               psmt.setString(2, block);
