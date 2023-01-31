@@ -53,8 +53,8 @@ public class Rertive {
         Connection con=gettin.conMethod();
        PreparedStatement ps=con.prepareStatement("select * from info1 where id=?");
         ps.setString(1, id1);
+        
         ResultSet results=ps.executeQuery();
-        if(results.next()){
         while(results.next()){
         String username=results.getString("ID");
         String passw=results.getString("NAME");
@@ -65,14 +65,6 @@ public class Rertive {
         String phoneno=results.getString("GENDER");
       
         arrayList.add(new use(username,passw,email,creditCardno,address,gender,phoneno));
-        }
-        }
-        else{
-             FacesContext.getCurrentInstance().addMessage(
-                    null,
-                    new FacesMessage(FacesMessage.SEVERITY_WARN,
-                            "sorry there is ",
-                            ""));
         }
     }
     catch(Exception e){}

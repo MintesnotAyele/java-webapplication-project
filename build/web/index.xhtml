@@ -12,10 +12,10 @@
                  background-size: 100%;
                background-color: aqua;
             }
-            form{
+            .in{
                 position: fixed;
-                margin-left: 400px;
-                margin-top: 100px;
+                margin-left: 600px;
+                margin-top: 200px;
                 
             }
              .btn {
@@ -40,18 +40,38 @@
   background: #3e7394;
   text-decoration: orangered;
 }
+.web{
+ margin-left: 400px;
+    
+}
+.ddd{
+    position: fixed;
+    margin-top: 200px;
+    margin-left: 50px;
+    background-color: antiquewhite;
+    width: 400px;
+    height: 150px
+}
         </style>
         
     </h:head>
     
     <h:body class="out">
-        <div class="in">
-            <h:form>
-                <h2>
+        <h2 class="web">
                    WELCOME TO WOLIKITE UNIVERSITY
                 </h2>
+        <div class="ddd">
+            <h1>igftyf yd6y567 bui6fv7yg yufrtyfty uyfytfyfi tyfuifufiu
+            gjkjgjkghjkgjkgjkgjkgk
+            </h1>
+            
+        </div>
+        <div class="in">
+            <h:form>
+                
+                
                 <h2>username:<h:inputText value="#{login.usern}"></h:inputText></h2>
-                <h2>Password:<h:inputText value="#{login.pass}"></h:inputText></h2>   
+                <h2>Password:<h:inputSecret value="#{login.pass}"></h:inputSecret></h2>   
                
                 <h:commandButton action="#{login.method1()}" class="btn" value="login"></h:commandButton>
                 <h:commandButton value="CANCLE" action="index" class="btn"></h:commandButton>
