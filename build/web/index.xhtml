@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>dormitory management</title>
+        <style>
+            .out{
+                 margin: 10px;
+              background-repeat: no-repeat;
+                background-image: url("photo/photggg.jpg");
+                 background-size: 100%;
+               background-color: aqua;
+            }
+            .in{
+                position: fixed;
+                margin-left: 600px;
+                margin-top: 200px;
+                
+            }
+             .btn {
+  -webkit-border-radius: 25;
+  -moz-border-radius: 25;
+  border-radius: 25px;
+  text-shadow: 1px 2px 3px #666666;
+  -webkit-box-shadow: 1px 1px 3px #666666;
+  -moz-box-shadow: 1px 1px 3px #666666;
+  box-shadow: 1px 1px 3px #666666;
+  font-family: Courier New;
+  color: #ede6ed;
+  font-size: 17px;
+  background: #3f5361;
+  padding: 9px 20px 10px 20px;
+  border: dotted #394852 2px;
+  text-decoration: none;
+   margin: 10px;
+}
+
+.btn:hover {
+  background: #3e7394;
+  text-decoration: orangered;
+}
+.web{
+ margin-left: 400px;
+    
+}
+.ddd{
+    position: fixed;
+    margin-top: 200px;
+    margin-left: 50px;
+    background-color: antiquewhite;
+    width: 400px;
+    height: 150px
+}
+.error{
+    color: red;
+}
+        </style>
+        
+    </h:head>
+    
+    <h:body class="out">
+        <h2 class="web">
+                   WELCOME TO WOLIKITE UNIVERSITY
+                </h2>
+        <div class="ddd">
+        </div>
+        <div class="in">
+            <h:form> 
+                <h2>username:<h:inputText value="#{login.usern}"></h:inputText></h2>
+                <h2>Password:<h:inputSecret id="pass" value="#{login.pass}" required="true"
+                  requiredMessage="must contain atleast 4 characters" maxlength="10">
+     <f:validateLength minimum="4" ></f:validateLength></h:inputSecret></h2>   
+                <h:message for="pass" styleClass="error"/>
+                <h:commandButton action="#{login.method1()}" class="btn" value="login"></h:commandButton>
+                <h:commandButton value="CANCLE" action="index" class="btn"></h:commandButton>
+            </h:form>
+            
+       
+  
+        </div>
+    </h:body>
+</html>
